@@ -12,7 +12,7 @@ var request = require('request');
 var pluckFirstLineFromFileAsync = function(filePath) {
   return new Promise(function(resolve, reject) {
     fs.readFile(filePath, function(err, data) {
-      if (err) return reject(err);
+      if (err) { return reject(err); }
 
       var text = data.toString();
       var firstLine = text.split('\n')[0].trim();   
@@ -26,7 +26,7 @@ var pluckFirstLineFromFileAsync = function(filePath) {
 var getStatusCodeAsync = function(url) {
   return new Promise(function(resolve, reject) {
     request(url, function(err, data) {
-      if (err) return reject(err);
+      if (err) { return reject(err); }
       resolve(data.statusCode);
     });
   });
