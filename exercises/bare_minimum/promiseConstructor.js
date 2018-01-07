@@ -5,7 +5,7 @@
  */
 
 var Promise = require('bluebird');
-var fs = Promise.promisifyAll(require("fs"));
+var fs = Promise.promisifyAll(require('fs'));
 var request = Promise.promisify(require('request'));
 
 // This function should retrieve the first line of the file at `filePath`
